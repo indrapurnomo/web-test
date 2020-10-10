@@ -5,4 +5,4 @@ WORKDIR /var/www/html/
 
 COPY . .
 
-EXPOSE 8888
+EXPOSE 8888/tcp
