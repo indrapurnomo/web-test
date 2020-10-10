@@ -4,3 +4,5 @@ WORKDIR /var/www/html/
 
 
 COPY . .
+
+EXPOSE 8888
