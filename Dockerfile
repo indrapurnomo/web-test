@@ -1,5 +1,9 @@
-FROM php:7.3.22-apache-stretch
+#FROM php:7.3.22-apache-stretch
 
-WORKDIR /var/www/html/
+#WORKDIR /var/www/html/
 
-COPY . .
+#COPY . .
+
+FROM nginx
+
+COPY . /usr/share/nginx/html/
