@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: landing
-        image: indradock/landingpage-app
+        image: indradock/landingpage-app:versi
         ports:
         - containerPort: 80
         imagePullPolicy: "Always"
