@@ -34,7 +34,7 @@ pipeline {
            }
         stage('set domain') {
             steps {
-                sh('sed -i "s/landing.indraku.online/landing.indraku.online/g" landing.yml')
+                sh('sed -i "s/landingpage.indraku.online/landingpage.indraku.online/g" landing.yml')
                 }
            }
         stage('deploy ke kubernetes') {
