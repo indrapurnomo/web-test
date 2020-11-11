@@ -29,12 +29,12 @@ pipeline {
            }
         stage('change namespace') {
             steps {
-                sh('sed -i "s/default/production/g" landing.yml')
+                sh('sed -i "s/default/staging/g" landing.yml')
                 }
            }
         stage('set domain') {
             steps {
-                sh('sed -i "s/landingpage.indraku.online/landingpage.indraku.online/g" landing.yml')
+                sh('sed -i "s/landingpage.indraku.online/landingpagestaging.indraku.online/g" landing.yml')
                 }
            }
         stage('deploy ke kubernetes') {
@@ -49,7 +49,7 @@ pipeline {
            }
          stage('show ingress') {
             steps {
-                sh('kubectl get ingress -n=production')
+                sh('kubectl get ingress -n=staging')
                 }
            }        
       }
