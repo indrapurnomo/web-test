@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: landing
-        image: indradock/landingpage-app:versi
+        image: indradock/landingpage-app:staging-versi
         ports:
         - containerPort: 80
         imagePullPolicy: "Always"
@@ -41,6 +41,7 @@ metadata:
   namespace: default
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   rules:
   - host: landingpage.indraku.online
