@@ -14,12 +14,12 @@ pipeline {
             }
         stage('docker build image') {
             steps {
-                sh "docker build --build-arg APP_NAME=$DOCKER_IMAGE_NAME -t $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:production-$BUILD_NUMBER ."
+                sh "docker build --build-arg APP_NAME=$DOCKER_IMAGE_NAME -t $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:$BUILD_NUMBER ."
                 }
            }
         stage('Docker push image') {
             steps {                
-                sh "docker push $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:production-$BUILD_NUMBER"
+                sh "docker push $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:$BUILD_NUMBER"
                 }
            }
         stage('versi image') {
@@ -44,7 +44,7 @@ pipeline {
            }
         stage('remove image docker') {
             steps {
-                sh "docker rmi $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:production-$BUILD_NUMBER"
+                sh "docker rmi $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:$BUILD_NUMBER"
                 }
            }
          stage('show ingress') {
