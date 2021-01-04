@@ -49,7 +49,7 @@ gulp.task('vendor', function(cb) {
     ])
     .pipe(gulp.dest('./vendor/jquery-easing'))
 
-  // Magnific Popup
+  // Magnific Popupa
   gulp.src([
       './node_modules/magnific-popup/dist/*'
     ])
